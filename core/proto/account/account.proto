@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package account;
+
+service Account {
+    rpc CreateAccount(RequestAccount) returns (ResponseAccount) {}
+}
+
+message RequestAccount {
+    string AccountID = 1;
+    string AccountName = 2;
+    string AccountPassword = 3;
+}
+
+message ResponseAccount {
+    AccountData account = 1;
+}
+
+message AccountData {
+    string ID = 1;
+    string fullName = 2;
+}
