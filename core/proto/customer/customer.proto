@@ -1,13 +1,19 @@
 syntax = "proto3";
 
+import "proto/account/account.proto";
+
 package customer;
 
 service Customer {
-    rpc FetchCustomer(RequestCustomer) returns (Response) {}
+    rpc FetchCustomer(RequestCustomer) returns (ResponseCustomer) {}
 }
 
 message RequestCustomer {
     string customerID = 1;
+}
+
+message ResponseCustomer {
+    CustomerData customerData = 1;
 }
 
 message CustomerData {
@@ -15,4 +21,5 @@ message CustomerData {
     string fullName = 2;
     string address = 3;
     bool status = 4;
+    account.AccountData account = 5;
 }

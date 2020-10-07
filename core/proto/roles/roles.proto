@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package roles;
+
+service Roles {
+    rpc AddRoles (RequestRoles) returns (ResponseRole) {}
+}
+
+message RequestRoles {
+    string roleID = 1;
+    string roleName = 2;
+}
+
+message ResponseRole {
+    repeated RoleData roles = 1;
+    RoleData role = 2;
+}
+
+message RoleData {
+    string roleID = 1;
+    string roleName = 2;
+}
