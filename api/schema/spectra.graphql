@@ -1,0 +1,7 @@
+type Query {
+    user: Users!
+}
+
+type Mutation {
+    user: UserMutation!
+}
