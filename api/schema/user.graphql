@@ -1,0 +1,30 @@
+type User {
+    fetchUser(in: InputUser!): UserResponse!
+}
+
+type UserMutation {
+    addUser(in: InputUser!): UserResponse!
+}
+
+input InputUser {
+    username: String!
+    fullName: String!
+    email: String!
+}
+
+type UserRequest {
+    username: String!
+    fullName: String!
+    email: String!
+}
+
+type UserResponse {
+    users: [UserData]!
+    user: UserData!
+}
+
+type UserData {
+    username: String!
+    fullName: String!
+    email: String!
+}
